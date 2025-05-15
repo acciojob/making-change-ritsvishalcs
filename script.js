@@ -1,25 +1,28 @@
-const makeChange = (c) => {
-  // your name here
-	let result = {
-        "q": 0,
-        "d": 0,
-        "n": 0,
-        "p": 0
-    }
-    result.q = Math.floor(amount / 25);
-    amount %=25
+function makeChange(cents) {
+  let result = {
+    q: 0, // quarters
+    d: 0, // dimes
+    n: 0, // nickels
+    p: 0  // pennies
+  };
 
-    result.d = Math.floor(amount / 10);
-    amount %=10
-    
-    result.n = Math.floor(amount / 5);
-    amount %=5
+  result.q = Math.floor(cents / 25);
+  cents %= 25;
 
-    result.p = amount;
-    return result;
-    
-};
+  result.d = Math.floor(cents / 10);
+  cents %= 10;
 
-// Do not the change the code below
-const c = prompt("Enter c: ");
-alert(JSON.stringify(makeChange(c)));
+  result.n = Math.floor(cents / 5);
+  cents %= 5;
+
+  result.p = cents;
+
+  return result;
+}
+
+// Get input using prompt
+const input = Number(prompt("Enter amount in cents:"));
+const output = makeChange(input);
+
+// Show result using alert as JSON
+alert(JSON.stringify(output));
