@@ -1,10 +1,10 @@
 const makeChange = (c) => {
   // your name here
 	let result = {
-        q: 0,
-        d: 0,
-        n: 0,
-        p: 0
+        "q": 0,
+        "d": 0,
+        "n": 0,
+        "p": 0
     }
     result.q = Math.floor(amount / 25);
     amount %=25
